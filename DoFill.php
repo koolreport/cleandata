@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * This file contains DoFill class helping to fill data to cell.
+ *
+ * @author KoolPHP Inc (support@koolphp.net)
+ * @link https://www.koolphp.net
+ * @copyright KoolPHP Inc
+ * @license https://www.koolreport.com/license
+ */
 namespace koolreport\cleandata;
 
 use \koolreport\core\Process;
@@ -12,6 +19,7 @@ class DoFill extends Process
     protected $targetColumns;
     protected $excludedColumns;
     protected $targetColumnType;
+    protected $strict;
     
     protected $columns;
 
@@ -22,6 +30,7 @@ class DoFill extends Process
         $this->targetColumnType = Utility::get($this->params,"targetColumnType");
         $this->targetColumns = Utility::get($this->params,"targetColumns");
         $this->excludedColumns = Utility::get($this->params,"excludedColumns");
+        $this->strict = Utility::get($this->params,"strict",false);
     }   
     
     protected function onMetaReceived($meta)
@@ -61,7 +70,7 @@ class DoFill extends Process
     {
         foreach($this->columns as $cName)
         {
-            if($row[$cName]==$this->targetValue)
+            if(($this->strict===false && $row[$cName]==$this->targetValue)||($this->strict===true && $row[$cName]===$this->targetValue))
             {
                 switch($this->newValue)
                 {

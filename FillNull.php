@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * This file contains FillNull process
+ *
+ * @author KoolPHP Inc (support@koolphp.net)
+ * @link https://www.koolphp.net
+ * @copyright KoolPHP Inc
+ * @license https://www.koolreport.com/license
+ */
 namespace koolreport\cleandata;
 
 use \koolreport\core\ProcessGroup;

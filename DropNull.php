@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * This file contains DropNull process
+ *
+ * @author KoolPHP Inc (support@koolphp.net)
+ * @link https://www.koolphp.net
+ * @copyright KoolPHP Inc
+ * @license https://www.koolreport.com/license
+ */
 namespace koolreport\cleandata;
 
 use \koolreport\core\Process;
@@ -13,6 +20,7 @@ class DropNull extends Process
     protected $excludedColumns;
     protected $thresh; 
     protected $columns;
+    protected $strict;
 
     protected function onInit()
     {
@@ -21,6 +29,7 @@ class DropNull extends Process
         $this->targetColumns = Utility::get($this->params,"targetColumns");
         $this->excludedColumns = Utility::get($this->params,"excludedColumns");
         $this->thresh = Utility::get($this->params,"thresh",1);
+        $this->strict = Utility::get($this->params,"strict",false);
     }
 
     protected function onMetaReceived($meta)
@@ -61,10 +70,11 @@ class DropNull extends Process
         $thresh=0;
         foreach($this->columns as $cName)
         {
-            if($row[$cName]==$this->targetValue)
+            if(($this->strict===false && $row[$cName]==$this->targetValue)||($this->strict===true && $row[$cName]===$this->targetValue))
             {
                 $thresh++;
             }
+
             if($thresh>=$this->thresh)
             {
                 return;

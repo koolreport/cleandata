@@ -1,11 +1,11 @@
 {
     "name": "koolreport/cleandata",
-    "version":"1.0.0",
+    "version":"1.5.0",
     "description": "Solve the missing data",
     "keywords": ["PHP","Reporting Tools","Data Report","Missing Data","Data Cleaning"],
     "homepage": "https://www.koolreport.com",
     "type": "library",
-    "license": "https://www.koolphp.net/license-agreement",
+    "license": "https://www.koolreport.com/license#mit-license",
     "require": {
     }
 }

@@ -1,5 +1,12 @@
 <?php
-
+/**
+ * This file contains Describe process providing the mean and median for data.
+ *
+ * @author KoolPHP Inc (support@koolphp.net)
+ * @link https://www.koolphp.net
+ * @copyright KoolPHP Inc
+ * @license https://www.koolreport.com/license
+ */
 namespace koolreport\cleandata;
 use \koolreport\core\Process;
 use \koolreport\core\Utility;

@@ -13,7 +13,7 @@ The missing value normally comes to KoolReport in form of `null` value. We solve
 
 ## DropNull
 
-The `DropNull` process will drop the row which has `null` value or meet certain number of `null` occurences.
+The `DropNull` process will drop the row which has `null` value or meet certain number of `null` occurrences.
 
 Let look at an example:
 
@@ -80,6 +80,17 @@ What if you do not want to drop `null` value but the `0` value. The missing data
 
 Of course, you can set any target values regardless number type or string type. The default value of `targetValue` is `null`.
 
+### Stricly Null
+
+By default the the `null` could be empty string or `0` value. To enable strict comparison of both value and type, you set the following:
+
+```
+->pipe(new DropNull(array(
+    "strict"=>true,
+)))
+```
+
+
 ## FillNull
 
 The `FillNull` value is another method of cleaning data. We do not drop row with `null` value, rather we fill `null` value with the new value.
@@ -112,7 +123,7 @@ In above example, we fill missing value with the value we want. However the bett
     "newValue"=>FillNull::MEAN,
 )))
 ```
-For meadian, you do
+For median, you do
 
 ```
 ->pipe(new FillNull(array(
@@ -130,7 +141,7 @@ You can apply fulling action to some of specified columns:
 )))
 ```
 
-### Exlude some columns
+### Exclude some columns
 
 Some columns are not important and missing value does not affect, you can do:
 
@@ -149,6 +160,17 @@ If you want you can apply the the fill to certain `number` columns:
     "targetColumnType"=>"number"
 )))
 ```
+
+### Strictly Null
+
+By default the the `null` could be empty string or `0` value. To enable strict comparison of both value and type, you set the following:
+
+```
+->pipe(new FillNull(array(
+    "strict"=>true,
+)))
+```
+
 
 ## Support
 
