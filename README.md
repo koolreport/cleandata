@@ -4,8 +4,23 @@ Missing data is always a problem with data analysis and data mining. The `cleand
 
 # Installation
 
-1. Download the zip file
-2. Copy the `cleandata` into `koolreport/packages` folder.
+## By downloading .zip file
+
+1. [Download](https://www.koolreport.com/packages/cleandata)
+2. Unzip the zip file
+3. Copy the folder `cleandata` into `koolreport` folder so that look like below
+
+```bash
+koolreport
+├── core
+├── cleandata
+```
+
+## By composer
+
+```
+composer require koolreport\cleandata
+```
 
 # Documentation
 
