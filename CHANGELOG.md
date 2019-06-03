@@ -1,3 +1,6 @@
+# Version 1.6.0
+1. Change README
+
 # Version 1.5.0
     1. Add `strict` property to both `DropNull` and `FillNull`. Set to true will enable strict comparison.
 
