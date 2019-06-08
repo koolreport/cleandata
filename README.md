@@ -19,7 +19,7 @@ koolreport
 ## By composer
 
 ```
-composer require koolreport\cleandata
+composer require koolreport/cleandata
 ```
 
 # Documentation
