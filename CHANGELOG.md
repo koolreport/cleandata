@@ -1,3 +1,7 @@
+
+# Version 1.6.1-dev
+1. Fix bug when targetColumns is null
+
 # Version 1.6.0
 1. Change README
 

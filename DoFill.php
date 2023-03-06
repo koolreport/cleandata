@@ -39,7 +39,7 @@ class DoFill extends Process
         foreach($meta["columns"] as $cName=>$cSetting)
         {
             $columnName = $cName;
-            if($this->targetColumns!==null && !in_array($cName,$this->targetColumns))
+            if($this->targetColumns!==null && is_array($this->targetColumns) && !in_array($cName,$this->targetColumns))
             {
                 $columnName = null;
             }
