@@ -1,5 +1,5 @@
 
-# Version 1.6.1-dev
+# Version 1.6.1
 1. Fix bug when targetColumns is null
 
 # Version 1.6.0
