@@ -14,6 +14,8 @@ use \koolreport\core\Utility;
 class Describe extends Process
 {
     protected $data = array();
+    protected $newValue;
+    protected $targetValue;
     protected $targetColumns;
     protected $excludedColumns;
     protected $targetColumnType;
